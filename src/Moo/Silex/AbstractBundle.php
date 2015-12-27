@@ -136,7 +136,7 @@ abstract class AbstractBundle
         // Setup the controller routes
         foreach ($routes as $method => $route) {
             $segments = explode('.', $method);
-            $this->app->$segments[0]($route, $name . ':' . $segments[1] . 'Action')->bind($segments[1]);
+            $this->app->{$segments[0]}($route, $name . ':' . $segments[1] . 'Action')->bind($segments[1]);
         }
 
         return $this;
