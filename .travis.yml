@@ -14,14 +14,8 @@ matrix:
 before_script:
   - composer install --dev --prefer-source
   - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - "sh -e /etc/init.d/xvfb start"
-  - "export DISPLAY=:99.0"
-  - "(php -S localhost:8000 -t web &) 2> /dev/null > /dev/null"
-  - "wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar"
-  - "(java -jar selenium-server-standalone-2.44.0.jar &) 2> /dev/null > /dev/null"
-  - sleep 5
 
-script: phpunit -c app --coverage-clover=coverage.clover && bin/behat --config src/MyApp/behat.yml -v
+script: phpunit -c app --coverage-clover=coverage.clover
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
