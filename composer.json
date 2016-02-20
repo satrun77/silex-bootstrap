@@ -22,7 +22,7 @@
         "symfony/twig-bridge": "2.5.2",
         "twig/twig": "~1.10",
         "symfony/intl": "2.5.2",
-        "symfony/form": "2.5.2",
+        "symfony/form": "^2.6",
         "symfony/validator": "2.5.2",
         "symfony/translation": "2.5.2",
         "symfony/config": "2.5.2",
